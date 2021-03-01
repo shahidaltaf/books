@@ -6,7 +6,7 @@ import List from './pages/List';
 function App() {
   return <Router>
     <Switch>
-      <Route path="/:page/:itemsPerPage" component={List} />
+      <Route path="/:page" component={List} />
       <Route exact path="/" component={List} />
     </Switch>
   </Router>;
