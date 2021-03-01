@@ -13,7 +13,7 @@ const List = () => {
     const { page = 1, itemsPerPage = 20 } = useParams();
     const [loading, setLoading] = useState(true);
     const [bookData, setBookData] = useState([]);
-    const [resultCount, rsetResultCount] = useState(0);
+    const [resultCount, setResultCount] = useState(0);
     const [totalPages, setTotalPages] = useState(0);
     const [searchTerm, setSearchTerm] = useState('');
 
@@ -30,7 +30,7 @@ const List = () => {
         }).then((data) => {
                 setLoading(false);
                 setBookData(data.books);
-                rsetResultCount(data.count);
+                setResultCount(data.count);
                 setTotalPages(Math.ceil(data.count / itemsPerPage));
                 return;
         })
